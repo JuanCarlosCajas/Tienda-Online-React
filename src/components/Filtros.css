@@ -1,0 +1,21 @@
+.separador{
+  width: 100%;
+  height: 120px;
+}
+
+.filtros{
+  height: max-content;
+  margin-bottom: 20px;
+}
+
+.rango-contenedor{
+  align-items: center;
+
+  .titulo-minimo{
+    width: 160px;
+  }
+
+  .muestra-rango{
+    width: 80px;
+  }
+}

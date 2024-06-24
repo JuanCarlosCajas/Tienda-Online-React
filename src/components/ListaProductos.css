@@ -1,0 +1,36 @@
+.lista-productos{
+  display: grid;
+  width: 100%;
+  padding: 0px 15px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  );
+  gap: 2rem;
+
+  .producto{
+    list-style: none;
+    display: flex;
+    transition: 0.5s;
+
+    &:hover{
+      transform: translateY(-8px);
+      transition: 0.5s;
+    }
+
+    .thumbnail-producto{
+      align-self: center;
+      width: 200px;
+      height: 200px;
+      aspect-ratio: 10/6;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .card-body{
+      .card-title{
+        height: 70px;
+      }
+    }
+  }
+}
