@@ -6,11 +6,9 @@ import { PedidosProvider } from "./context/pedidos.jsx";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <PedidosProvider>
-      <FiltroProvider>
-        <App />
-      </FiltroProvider>
-    </PedidosProvider>
-  </BrowserRouter>
+  <PedidosProvider>
+    <FiltroProvider>
+      <App />
+    </FiltroProvider>
+  </PedidosProvider>
 );

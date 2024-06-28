@@ -1,0 +1,14 @@
+.background-carrito{
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.5);
+  width: 100%;
+  z-index: 10;
+
+  .carrito-contenedor{
+    position: absolute;
+    right: 0;
+    background-color: white;
+
+    
+  }
+}

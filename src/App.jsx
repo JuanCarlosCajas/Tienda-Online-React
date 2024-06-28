@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Header } from "./components/Header";
 import { Inicio } from "./routes/Inicio";
@@ -8,11 +8,13 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Inicio />}></Route>
-        <Route path="/producto/:id" element={<DetalleProducto />}></Route>
-        <Route path="/*" element={<Inicio/>}></Route>
-      </Routes>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Inicio />}></Route>
+          <Route path="/producto/:id" element={<DetalleProducto />}></Route>
+          <Route path="/*" element={<Inicio />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

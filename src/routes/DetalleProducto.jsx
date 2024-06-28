@@ -1,11 +1,16 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import './DetalleProducto.css'
+import { PedidosContext } from "../context/pedidos";
 
 export const DetalleProducto = () => {
 
   const { id } = useParams();
   const [producto , setProducto] = useState([])
+
+  const { verificarProducto, eliminarPedido, agregarPedido } = useContext(PedidosContext)
+
+  const ProductoPedido = verificarProducto(id)
 
   useEffect(() => {
     fetch(`https://decidijc.com/?id=${id}`)
@@ -30,7 +35,7 @@ export const DetalleProducto = () => {
           <h2>{producto.nombre}</h2>
           <p>{producto.descripcion}</p>
           <p>Precio: $ <strong>{producto.precio}</strong></p>
-          <button className="btn btn-success">Pedir Producto</button>
+          <button className={ProductoPedido ? "btn btn-danger" : "btn btn-success"} onClick={() => ProductoPedido ? eliminarPedido(producto): agregarPedido(producto)}>{ProductoPedido ? "Eliminar Producto" : "Pedir Producto"}</button>
           <a href="/" className="btn btn-primary ms-3">Regresar a Tienda</a>
         </main>
       </div>
